@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Classic Creamery Management System</title>
+    <%= csrf_meta_tags %>
+
+
+    <!-- Custom Application CSS (Ice Cream Theme - load AFTER Bootstrap to override styles) -->
+    <%= stylesheet_link_tag "application" %>
+  </head>
+
+  <body>
+    <main>
+        <%= yield %>
+    </main>
+    
+
+    <%= javascript_include_tag "application" %>
+
+  </body>
+</html>
