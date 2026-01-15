@@ -20,7 +20,7 @@ This phase will constitute 5 percent of your final course grade and is broken do
 
 **Checkpoint**
 
-On **February 4th**, the three models must be generated using the Rails generators, the initial database created, and all the relationships between the three models must be set up and tested. In addition, the scopes for all models must be completed and tested.
+On **February 4th**, the three models must be generated using the Rails generators, the initial database created, and all the relationships between the three models must be set up and tested. In addition, the scopes for `Store` and `Employee` models must be completed and tested.
 
 All checkpoints are due in your GitHub repository before 11:59pm EST on the date specified. We are not explicitly checking for test coverage on checkpoints, only that the specified tests exist and they pass. Checkpoints will be submitted via GitHub and Gradescope (additional instructions to follow).
 
