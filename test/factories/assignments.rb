@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :assignment do
-    store { nil }
-    employee { nil }
-    start_date { "2026-02-26" }
-    end_date { "2026-02-26" }
+    association :store
+    association :employee
+    start_date { 1.year.ago.to_date }
+    end_date { 1.month.ago.to_date }
   end
 end

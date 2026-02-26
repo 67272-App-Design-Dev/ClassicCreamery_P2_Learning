@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_02_26_010724) do
+ActiveRecord::Schema[8.1].define(version: 2026_02_26_015948) do
   create_table "assignments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.integer "employee_id", null: false
@@ -29,7 +29,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_26_010724) do
     t.string "first_name"
     t.string "last_name"
     t.string "phone"
-    t.string "role", default: "employee"
+    t.integer "role", default: 1
     t.string "ssn"
     t.datetime "updated_at", null: false
   end

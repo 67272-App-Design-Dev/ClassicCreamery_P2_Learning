@@ -164,6 +164,7 @@ class StoreTest < ActiveSupport::TestCase
         active = Store.active.to_a
         assert_includes active, @pittsburgh
         assert_includes active, @bethany
+        assert_includes active, @cmu
         deny active.include?(@cleveland)
       end
 
@@ -172,10 +173,13 @@ class StoreTest < ActiveSupport::TestCase
         assert_includes inactive, @cleveland
         deny inactive.include?(@pittsburgh)
         deny inactive.include?(@bethany)
+        deny inactive.include?(@cmu)
       end
 
       should "return all stores in alphabetical order by name" do
-        assert_equal [@bethany, @cleveland, @pittsburgh], Store.alphabetical.to_a
+        # SQLite binary sort: uppercase letters (A-Z) sort before lowercase (a-z),
+        # so "CMU" (C-M-U) comes before "Cleveland" (C-l-e...) because 'M' < 'l' in ASCII.
+        assert_equal [@bethany, @cmu, @cleveland, @pittsburgh], Store.alphabetical.to_a
       end
     end
 
