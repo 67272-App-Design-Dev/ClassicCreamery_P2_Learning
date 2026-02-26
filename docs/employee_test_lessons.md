@@ -200,6 +200,11 @@ Breaking that down from the inside out:
 
 This is called a **subquery** — a query nested inside another query. Rails translates it into a single efficient SQL statement.
 
+Alternate solutions would include:
+- `scope :unassigned, -> { left_joins(:assignments).where("assignments.id is null") }`
+- `scope :unassigned, -> { left_joins(:assignments).where('assignments.id': nil) }`
+- `scope :unassigned, -> { where.missing(:assignments) }`  _# A Rails shortcut_
+
 ---
 
 ## Test H
