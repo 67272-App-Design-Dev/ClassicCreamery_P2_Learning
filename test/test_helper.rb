@@ -18,7 +18,7 @@ require "minitest"
 require 'minitest/rails'
 require 'minitest/reporters'
 require 'minitest_extensions'
-# require 'contexts'
+require 'contexts'
 
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
@@ -34,7 +34,7 @@ class ActiveSupport::TestCase
   end
 
   # Add more helper methods to be used by all tests here...
-  # include Contexts
+  include Contexts
 
   # Add the infamous deny method...
   def deny(condition, msg="")
